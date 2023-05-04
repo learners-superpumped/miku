@@ -41,4 +41,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "Generating .env file..."
+python create_env.py
+if [ $? -ne 0 ]; then
+    echo "ERROR: Failed to generate .env file."
+    exit 1
+fi
+
 echo "All dependencies have been installed and .env file generated successfully."
