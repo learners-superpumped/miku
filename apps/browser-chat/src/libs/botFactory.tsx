@@ -184,6 +184,7 @@ class BotFactory {
       String(searchParams['openai'] || '') || ''  
     );
     const textWriter = new MikuCore.CommandGenerators.TextCommandGenerator();
+    // @ts-ignore
     const memory = this.getMemory(botConfig.short_term_memory);
     const promptCompleter = this.getPromptCompleter({
       service: botConfig.prompt_completer.service,

@@ -103,7 +103,7 @@ export const InteractiveResponsesContextProvider = ({ children }: {children: JSX
         playAudio(base64);
       }
     });
-
+    // @ts-ignore
     if (audioSubscribed) {
       setIsAudioSubscribed(true);
     }

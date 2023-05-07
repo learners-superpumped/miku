@@ -38,7 +38,7 @@ app.post('/audio-upload', uploadAudio.single('file'), (req, res) => {
 });
 
 const addRoute = (path: string, cb: (body: any) => Promise<{ status: number, response: any}>) => {
-  app.post(path, async (req, res) => {
+  app.post('/api' + path, async (req, res) => {
     const result = await cb(req.body);
     res.status(result.status).send(result.response);
   });
