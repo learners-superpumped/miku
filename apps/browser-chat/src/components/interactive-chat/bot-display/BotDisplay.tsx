@@ -55,7 +55,9 @@ export const BotDisplay = () => {
   );
   let emotionImage = response?.emotion || prevResponse?.emotion || '';
   if (!emotionImage) {
+    // @ts-ignore
     const openAIEmotionConfig = botConfig?.outputListeners.find((listener: {service: string}) => listener.service === MikuExtensions.Services.ServicesNames.OpenAIEmotionInterpreter)
+    // @ts-ignore
     const sbertEmotionConfig = botConfig?.outputListeners.find((listener: {service: string}) => listener.service === MikuExtensions.Services.ServicesNames.SBertEmotionInterpreter)
     if (sbertEmotionConfig) {
       const props = sbertEmotionConfig.props as MikuExtensions.Services.SBertEmotionInterpreterProps;
